@@ -54,26 +54,29 @@ body {
   100% { transform: translateY(-1000px) rotate(360deg); opacity: 0; }
 }
 
-/* Navigation */
+/* Navigation Bar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 15px 8%;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 10;
 }
 .logo {
   font-size: 30px;
   font-weight: bold;
   text-shadow: 0 0 10px #fff;
 }
+
+/* Desktop Nav */
 .nav-links {
   display: flex;
   gap: 20px;
+  list-style: none;
 }
 .nav-links a {
   color: #fff;
@@ -98,6 +101,15 @@ nav {
 .nav-links a:hover {
   color: #FFD700;
   text-shadow: 0 0 5px #FFD700;
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 11;
 }
 
 /* Hero Section */
@@ -162,17 +174,7 @@ nav {
   transform: scale(1.05);
 }
 
-/* Animations */
-@keyframes slideInLeft {
-  0% { transform: translateX(-100px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-@keyframes zoomIn {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* Sections Shared (for skills/experience/education) */
+/* Section Styles */
 .section {
   margin: 40px 8%;
   background: rgba(255,255,255,0.15);
@@ -183,10 +185,6 @@ nav {
   z-index: 1;
   animation: fadeInUp 1s ease;
 }
-@keyframes fadeInUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
 h2 {
   text-align: center;
   font-size: 28px;
@@ -194,11 +192,46 @@ h2 {
   text-shadow: 0 0 10px #FFD700;
 }
 
-/* Responsive */
+/* Animations */
+@keyframes slideInLeft {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes zoomIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Navigation */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.85);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    padding: 20px;
+    border-radius: 8px 0 0 8px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    margin: 10px 0;
+  }
   .hero {
     flex-direction: column;
     text-align: center;
+    padding-top: 80px;
   }
   .profile-img img {
     width: 220px;
