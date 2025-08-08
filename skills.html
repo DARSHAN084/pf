@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills - Darshan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Extra animation specific for progress bars */
+    .skill-container {
+      max-width: 600px;
+      margin: auto;
+      padding-top: 20px;
+    }
+    .skill-bar {
+      margin-bottom: 20px;
+    }
+    .skill-bar span {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      text-shadow: 0 0 5px #FFD700;
+    }
+    .progress {
+      background: rgba(255,255,255,0.3);
+      height: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    }
+    .fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #FFD700, #FF6FB5);
+      animation: fillBarAnim 2s forwards;
+      box-shadow: 0 0 10px rgba(255,215,0,0.5);
+    }
+    @keyframes fillBarAnim {
+      from { width: 0; }
+      to { width: var(--width); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Shapes -->
+  <div class="floating-shapes">
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape triangle"></div>
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape triangle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">D</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="mailto:darshanchitroda0@gmail.com">Hire Me</a>
+      <a href="https://wa.me/919859999271" target="_blank">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Skills Section -->
+  <section class="section slide-in-left">
+    <h2>My Skills</h2>
+    <div class="skill-container">
+      <div class="skill-bar">
+        <span>HTML</span>
+        <div class="progress"><div class="fill" style="--width: 95%;"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>CSS</span>
+        <div class="progress"><div class="fill" style="--width: 90%;"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>WordPress</span>
+        <div class="progress"><div class="fill" style="--width: 85%;"></div></div>
+      </div>
+      <div class="skill-bar">
+        <span>JavaScript</span>
+        <div class="progress"><div class="fill" style="--width: 70%;"></div></div>
+      </div>
+      
+    </div>
+  </section>
+
+</body>
+</html>
